@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#e1251b</color>
+    <color name="elektra_yellow">#ffdc20</color>
+    <color name="elektra_red">#e1251b</color>
+
+    <color name="colorPrimary">#ffdc20</color>
+    <color name="primaryLightColor">#ffff5e</color>
+    <color name="colorPrimaryDark">#c8ab00</color>
+    <color name="secondaryColor">#e1251b</color>
+    <color name="secondaryLightColor">#ff6146</color>
+    <color name="secondaryDarkColor">#a70000</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="subtitlesTextColor">#53727F</color>
+    <color name="subtitlesDisableTextColor">#A6B6BC</color>
+    <color name="linkTextColor">#3AA6EF</color>
+    <color name="background">#EFF0F0</color>
+</resources>

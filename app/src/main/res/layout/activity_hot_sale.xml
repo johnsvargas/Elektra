@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="com.juancarlos.elektra.viewmodel.HotSaleViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.HotSaleActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/h_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="2dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/h_account_imageView"
+                    android:layout_width="36dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="fitCenter"
+                    android:tint="@android:color/darker_gray"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_portfolio_inactive" />
+
+                <ImageView
+                    android:id="@+id/h_logoElektra_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/elektra" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/h_toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusableInTouchMode="true">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h_right_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@fraction/guideline_right" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/h_left_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@fraction/guideline_left" />
+
+                <ImageView
+                    android:id="@+id/h_offert_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
+                    android:elevation="5dp"
+                    android:outlineProvider="bounds"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_launcher_background"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/h_credi_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:adjustViewBounds="true"
+                    android:elevation="5dp"
+                    android:outlineProvider="bounds"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_offert_image"
+                    tools:src="@drawable/ic_launcher_background"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titleCategory_textView"
+                    style="@style/SubTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/favorite_category"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_credi_image"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category1"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleCategory_textView"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category2"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/category1"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleCategory_textView"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category3"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/category2"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleCategory_textView"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category4"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/category1"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category5"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category6"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/category1"
+                    app:layout_constraintTop_toBottomOf="@+id/category1"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category6"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/category5"
+                    app:layout_constraintTop_toBottomOf="@+id/category1"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category7"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/category4"
+                    tools:visibility="visible" />
+
+                <com.juancarlos.elektra.customsviews.CategoryView
+                    android:id="@+id/category8"
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/category6"
+                    app:layout_constraintStart_toEndOf="@+id/category1"
+                    app:layout_constraintTop_toBottomOf="@+id/category4"
+                    tools:visibility="visible" />
+
+                <Button
+                    android:id="@+id/h_more_cetegory_button"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/circular_button_active"
+                    android:text="..."
+                    android:textColor="@color/linkTextColor"
+                    android:textSize="25sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/category8"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toEndOf="@+id/category8"
+                    app:layout_constraintTop_toBottomOf="@+id/category6"
+                    app:layout_constraintVertical_bias="0.25"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/textPrincipalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/see_all"
+                    app:layout_constraintBottom_toBottomOf="@+id/category8"
+                    app:layout_constraintEnd_toEndOf="@+id/h_more_cetegory_button"
+                    app:layout_constraintStart_toStartOf="@+id/h_more_cetegory_button"
+                    app:layout_constraintTop_toBottomOf="@+id/h_more_cetegory_button"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titleBrands_textView"
+                    style="@style/SubTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/participants_brands"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/category7"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/h_Brands_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleBrands_textView"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titleCollections_textView"
+                    style="@style/SubTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/collections"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_Brands_recyclerView"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/h_collection1_imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerInside"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleCollections_textView"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/h_collection2_imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerInside"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_collection1_imageView"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/h_collection3_imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerInside"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_collection2_imageView"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titlemostSolds_textView"
+                    style="@style/SubTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/most_sold"
+                    app:layout_constraintEnd_toStartOf="@+id/h_titlemostSolds_link_textView"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_collection3_imageView"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titlemostSolds_link_textView"
+                    style="@style/SeeMoreTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/see_more"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/h_collection3_imageView"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/h_mostSold_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titlemostSolds_textView"
+                    tools:visibility="visible" />
+
+
+                <TextView
+                    android:id="@+id/h_titleRecommended_textView"
+                    style="@style/SubTitleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/recommended_for_you"
+                    app:layout_constraintEnd_toStartOf="@+id/h_titleRecommended_link_textView"
+                    app:layout_constraintStart_toStartOf="@+id/h_left_guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/h_mostSold_recyclerView"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/h_titleRecommended_link_textView"
+                    style="@style/SeeMoreTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/see_more"
+                    app:layout_constraintEnd_toStartOf="@+id/h_right_guideline"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/h_mostSold_recyclerView"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/h_Recommended_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/h_titleRecommended_textView"
+                    tools:visibility="visible" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

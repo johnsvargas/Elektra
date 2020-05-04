@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarTheme">@style/ToolbarStyle</item>
+        <item name="background">@color/background</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarTheme">@style/ToolbarStyle</item>
+        <item name="background">@color/background</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/elektra_red</item>
+    </style>
+
+    <style name="textPrincipalTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/subtitlesTextColor</item>
+
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SubTitleTextView" parent="textPrincipalTextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SeeMoreTextView" parent="textPrincipalTextView">
+        <item name="android:textColor">@color/linkTextColor</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

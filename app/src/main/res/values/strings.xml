@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Elektra</string>
+    <string name="favorite_category">Categorias Preferidas</string>
+    <string name="see_all">Ver Todas</string>
+    <string name="participants_brands">Marcas Participantes</string>
+    <string name="collections">Colecciones</string>
+    <string name="most_sold">Los Más Vendidos</string>
+    <string name="see_more">Ver más</string>
+    <string name="recommended_for_you">Recomendados para ti</string>
+    <string name="find_by_name">Buscar por nombre</string>
+    <string name="buy">Comprar</string>
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellidos</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Password</string>
+    <string name="register">Registrar</string>
+</resources>

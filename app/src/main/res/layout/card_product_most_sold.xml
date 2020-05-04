@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="position"
+            type="Integer" />
+        <variable
+            name="model"
+            type="com.juancarlos.elektra.viewmodel.HotSaleViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <com.juancarlos.elektra.customsviews.ProductView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:imageGlideUrl="@{model.getProductMostSoldCardAt(position).image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textFromWeekly="@{model.getProductMostSoldCardAt(position).fromWeek}"
+            app:textToOldPrice="@{model.getProductMostSoldCardAt(position).lastPriceString}"
+            app:textToPrice="@{model.getProductMostSoldCardAt(position).priceString}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
